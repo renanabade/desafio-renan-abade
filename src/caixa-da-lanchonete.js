@@ -53,9 +53,8 @@ class CaixaDaLanchonete {
 
         // Somar preço
         let preco = 0;
-        for (let produto of carrinho) {
-            const itemDoCardapio = cardapio.find((item) => item.codigo === produto.produto.codigo);
-            preco += itemDoCardapio.valor * produto.quantidade;
+        for (let compra of carrinho) {
+            preco += compra.produto.valor * compra.quantidade;
         }
 
         if (metodoDePagamento === 'credito') {
